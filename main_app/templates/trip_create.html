@@ -4,7 +4,64 @@
 
 <form method="post">
   {% csrf_token %} 
-  {{form.as_p}} 
+  
+  <div class="field">
+    <label class="label" for="id_location">Location</label>
+    <div class="control">
+        {{ form.location }}
+        <!-- <input class="input" type="text" placeholder="Trip location" name="description" value="{{ form.location.value|default_if_none:'' }}">    -->
+    </div>
+  </div>
+
+  <!-- <div class="field">
+    <label class="label" for="id_description">Description</label>
+    <div class="control">
+        {{ form.description }}
+        <input placeholder="e.g Girls trip!">
+      
+    </div>
+  </div> -->
+
+  <div class="field">
+    <label class="label" for="id_description">Description</label>
+    <div class="control">
+        {{ form.description }}
+        <!-- <input class="input" type="text" placeholder="e.g. Girls trip!" name="description" value="{{ form.description.value|default_if_none:'' }}"> -->
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="id_start_date">Start Date</label>
+    <div class="control">
+        {{ form.start_date }}
+        <!-- <input class="input" type="text" placeholder="YYYY-MM-DD" value="{{ form.start_date.value|default_if_none:'' }}">  -->
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="id_end_date">End Date</label>
+    <div class="control">
+        {{ form.end_date }}
+        <!-- <input class="input" type="text" placeholder="YYYY-MM-DD" value="{{ form.end_date.value|default_if_none:'' }}">  -->
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="id_reservation">Reservation</label>
+    <div class="control">
+        {{ form.reservation }}
+        <!-- <input class="input" type="text" placeholder="Link to tour" value="{{ form.reservation.value|default_if_none:'' }}"> -->
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="id_image">Image</label>
+    <div class="control">
+        {{ form.image }}
+        <!-- <input class="input" type="text" placeholder="Image of Location" value="{{ form.image.value|default_if_none:'' }}"> -->
+    </div>
+  </div>
+
   <input type="submit" value="Add Trip" />
 </form>
 
