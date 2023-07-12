@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% comment %} {% endcomment %}
+{% block title %}Trips and Events{% endblock  %}
+
+{% block content %}
+
+<h1 class="title pt-5">My Trips</h1>
+<div class="gallery">
+  {% for trip in trips %}
+  <a href="">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by5">
+          <img src="{{trip.image}}" alt="{{trip.name}}" />
+        </figure>
+      </div>
+      <div class="card-header">
+        <p class="card-header-title">{{trip.name}}</p>
+      </div>
+    </div>
+  </a>
+	{% empty %}
+  <article class="message">
+    <div class="message-header">
+      <p>No Trips Planned</p>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}

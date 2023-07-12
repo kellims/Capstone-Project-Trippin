@@ -10,3 +10,12 @@ class Home(TemplateView):
     
 class About(TemplateView):
     template_name = "about.html" 
+
+
+class TripList(TemplateView):
+    template_name = "trip_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["trips"] = trips
+        return context
