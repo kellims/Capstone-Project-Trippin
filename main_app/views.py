@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
-
+from django.views.generic.edit import CreateView
 
 from .models import Trip
 
@@ -24,3 +24,9 @@ class TripList(TemplateView):
         context = super().get_context_data(**kwargs)
         context["trips"] = Trip.objects.all()
         return context
+    
+class TripCreate(CreateView):
+    model = Trip
+    fields = ['location', 'description', 'start_date', 'end_date', 'reservation', 'image']
+    template_name = "trip_create.html"
+    success_url = "/trips/"    
