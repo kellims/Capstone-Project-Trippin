@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="detail__img">
+    <img src="{{trip.image}}" alt="{{trip.location}}" />
+</div>
+<div class="detail__name">
+    
+    <h1 class="title">{{trip.location}}</h1>
+</div>
+<div class="detail__container">
+    <div class="buttons">
+        <a href="" class="button is-rounded is-info is-inverted">
+            <span class="icon">
+                <i class="fas fa-edit"></i>
+            </span>
+        </a>
+        <a href="" class="button is-rounded is-danger is-inverted">
+            <span class="icon">
+                <i class="fas fa-trash-alt"></i>
+            </span>
+        </a>
+    </div>
+    <div class="detail__about">
+        <h4 class="title is-4">About My Trip</h4>
+        <p>{{trip.description}}</p>
+    </div>
+</div>
+
+{% endblock %}

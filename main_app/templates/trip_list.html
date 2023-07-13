@@ -9,7 +9,7 @@
 <a class="button is-rounded is-info is-inverted" href="{% url 'trip_create' %}">Add A New Trip</a>
 <div class="gallery">
   {% for trip in trips %}
-  <a href="">
+  <a href="{% url 'trip_detail' trip.pk %}">
     <div class="card">
       <div class="card-image">
         <figure class="image is-4by5">
