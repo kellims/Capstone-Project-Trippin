@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import DetailView
 
 from .models import Trip
@@ -36,3 +36,10 @@ class TripCreate(CreateView):
 class TripDetail(DetailView):
     model = Trip
     template_name = "trip_detail.html"
+
+
+class TripUpdate(UpdateView):
+    model = Trip
+    fields = ['location', 'description', 'start_date', 'end_date', 'image']
+    template_name = "trip_update.html"
+    success_url = "/trips/"
