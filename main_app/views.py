@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
 
@@ -48,3 +48,9 @@ class TripUpdate(UpdateView):
     
     def get_success_url(self):
         return reverse('trip_detail', kwargs={'pk': self.object.pk})
+
+
+class TripDelete(DeleteView):
+    model = Trip
+    template_name = "trip_delete_confirmation.html"
+    success_url = "/trips/"
