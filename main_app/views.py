@@ -27,6 +27,6 @@ class TripList(TemplateView):
     
 class TripCreate(CreateView):
     model = Trip
-    fields = ['location', 'description', 'start_date', 'end_date', 'reservation', 'image']
+    fields = ['location', 'description', 'start_date', 'end_date', 'image']
     template_name = "trip_create.html"
     success_url = "/trips/"    
