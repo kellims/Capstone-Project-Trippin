@@ -101,3 +101,11 @@ class ReservationCreate(CreateView):
 class ReservationDetail(DetailView):
     model = Reservation
     template_name = "reservation_detail.html"
+
+class ReservationUpdate(UpdateView):
+    model = Reservation
+    fields = ['name', 'description', 'start_date', 'end_date', 'location', 'file', 'type']
+    template_name = "reservation_update.html"
+    
+    def get_success_url(self):
+        return reverse('reservation_detail', kwargs={'pk': self.object.pk})    

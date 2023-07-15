@@ -11,5 +11,5 @@ urlpatterns = [
     path('trips/<int:pk>/delete',views.TripDelete.as_view(), name="trip_delete"),
     path('trips/<int:pk>/reservations/new/', views.ReservationCreate.as_view(), name="reservation_create"),
     path('trips/<int:pk>/reservations/', views.ReservationDetail.as_view(), name="reservation_detail"),
-
+    path('trips/<int:pk>/reservations/update', views.ReservationUpdate.as_view(), name="reservation_update"),
 ]
