@@ -20,11 +20,11 @@
                 <i class="fas fa-trash-alt"></i>
             </span>
         </a>
-        <a href="{% url 'reservation_create' trip.pk %}" class="button is-rounded is-success is-inverted">
+        <!-- <a href="{% url 'reservation_create' trip.pk %}" class="button is-rounded is-success is-inverted">
             <span class="icon">
                 <i class="fas fa-plus"></i>
             </span>
-        </a>
+        </a> -->
     </div>
     <div class="detail__about">
         <h4 class="title is-4">About My Trip</h4>
@@ -33,6 +33,144 @@
 
     <div class="detail__reservations mb-5">
         <h3 class="title is-3">Reservations</h3> 
+
+        <label for="show-form-checkbox" class="button is-rounded is-success is-inverted">
+            <span class="icon">
+              <i class="fas fa-plus"></i>
+            </span>
+          </label>
+          <input type="checkbox" id="show-form-checkbox">
+          <form id="reservation-form" method="post" action="{% url 'reservation_create' pk=trip.pk %}">
+            {% csrf_token %}
+            <div class="field has-addons">
+                <div class="control">
+                    <input
+                        class="input"
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        required
+                    />
+                </div>
+                <div class="control">
+                    <input
+                        class="input"
+                        type="text"
+                        name="description"
+                        placeholder="Description"
+                        required
+                    />
+                </div>
+                <div class="control">
+                    <input
+                        class="input"
+                        type="date"
+                        name="start_date"
+                        placeholder="Start Date"
+                        required
+                    />
+                </div>
+                <div class="control">
+                    <input
+                        class="input"
+                        type="date"
+                        name="end_date"
+                        placeholder="End Date"
+                    />
+                </div>
+                <div class="control">
+                    <input
+                        class="input"
+                        type="text"
+                        name="location"
+                        placeholder="Location"
+                        required
+                    />
+                </div>
+                <div class="control">
+                    <input
+                        class="input"
+                        type="url"
+                        name="file"
+                        placeholder="File"
+                    />
+                </div>
+                
+                    <div class="control">
+                        <select class="select" name="type" required>
+                            <option value="Dining">Dining</option>
+                            <option value="Hotel">Hotel</option>
+                            <option value="Transportation">Transportation</option>
+                            <option value="Day Trip">Day Trip</option>
+                            <option value="Museum">Museum</option>
+                            <option value="Site Seeing">Site Seeing</option>
+                            <option value="Tour">Tour</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="control">
+                    <input class="button is-primary" type="submit" value="Add Reservation" />
+                </div>
+            </div>
+
+
+
+
+                 <!-- <div class="field">
+                   <label class="label" for="id_name">Name</label>
+                   <div class="control">
+                       {{ form.name }}
+                   </div>
+                 </div>
+               
+                 <div class="field">
+                   <label class="label" for="id_description">description</label>
+                   <div class="control">
+                       {{ form.description }}
+                   </div>
+                 </div>
+               
+                 <div class="field">
+                   <label class="label" for="id_start_date">Start Date</label>
+                   <div class="control">
+                       {{ form.start_date }}
+                   </div>
+                 </div>
+               
+                 <div class="field">
+                   <label class="label" for="id_end_date">End Date</label>
+                   <div class="control">
+                       {{ form.end_date }}
+                   </div>
+                 </div>
+               
+                 
+                 <div class="field">
+                   <label class="label" for="id_location">Location</label>
+                   <div class="control">
+                       {{ form.location }}
+                   </div>
+                 </div>
+               
+                 <div class="field">
+                   <label class="label" for="id_file">File</label>
+                   <div class="control">
+                       {{ form.file }}
+                   </div>
+                 </div>
+               
+                 <div class="field">
+                   <label class="label" for="id_type">Type</label>
+                   <div class="control">
+                       {{ form.type }}
+                   </div>
+                 </div> -->
+               
+                 <!-- <input type="submit" value="Add Reservation" /> -->
+               </form>
+    
 
     
         {% for reservation in trip.reservations.all %}

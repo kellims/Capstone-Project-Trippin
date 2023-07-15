@@ -7,6 +7,10 @@ from django.views.generic import DetailView
 from django.urls import reverse
 from django.shortcuts import redirect
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 from .models import Trip, Reservation
 
 # Create your views here.
@@ -57,31 +61,40 @@ class TripDelete(DeleteView):
     success_url = "/trips/"
 
 
-# class ReservationCreate(View):
-
-#     def post(self, request, pk):
-#         name = request.POST.get("name")
-#         description = request.POST.get("description")
-#         start_date = request.POST.get("start_date")
-#         end_date = request.POST.get("end_date")
-#         location = request.POST.get("location")
-#         type = request.POST.get("type")
-#         file = request.POST.get("file")
-#         trip = Trip.objects.get(pk=pk)
-#         Reservation.objects.create(name=name, description=description, start_date=start_date, end_date=end_date, location=location, type=type, file=file, trip=trip)
-#         return redirect('trip_detail', pk=pk)
-    
 class ReservationCreate(CreateView):
-    model = Reservation
-    fields = ['name', 'description', 'start_date', 'end_date', 'location', 'type', 'file', 'trip']
-    template_name = "reservation_create.html"
 
-    def form_valid(self, form):
-        trip = Trip.objects.get(pk=self.kwargs['pk'])
-        form.instance.trip = trip
-        return super().form_valid(form)
+    def post(self, request, pk):
+        name = request.POST.get("name")
+        description = request.POST.get("description")
+        start_date = request.POST.get("start_date")
+        end_date = request.POST.get("end_date")
+        location = request.POST.get("location")
+        type = request.POST.get("type")
+        file = request.POST.get("file")
+        trip = Trip.objects.get(pk=pk)
+        Reservation.objects.create(name=name, description=description, start_date=start_date, end_date=end_date, location=location, type=type, file=file, trip=trip)
+        return redirect('trip_detail', pk=pk)
     
-    def get_success_url(self):
-        return reverse('trip_detail', kwargs={'pk': self.object.pk})
+# class ReservationCreate(CreateView):
+#     model = Reservation
+#     fields = ['name', 'description', 'start_date', 'end_date', 'location', 'type', 'file', 'trip']
+#     template_name = "reservation_create.html"
+
+#     def form_valid(self, form):
+#         trip = Trip.objects.get(pk=self.kwargs['pk'])
+#         logger.info("Associated Trip: %s", trip)
+#         form.instance.trip = trip
+
+
+#         if form.is_valid():
+#             logger.info("Form data is valid")
+#         else:
+#             logger.error("Form data is invalid")
+#             logger.error("Form errors: %s", form.errors)
+    
+#         return super().form_valid(form)
+    
+#     def get_success_url(self):
+#         return reverse('trip_detail', kwargs={'pk': self.object.pk})
         
 

@@ -13,7 +13,7 @@
     width: 100%;
     padding: 10px;
     display: grid;
-    grid-template-columns: 0.1fr 3fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
     border-radius: 5px;
 }
 
@@ -21,3 +21,28 @@
     background-color: hsla(0, 0%, 100%, 0.1);
     cursor: pointer;
 }
+
+#show-form-checkbox {
+    display: none;
+  }
+  
+  #show-form-checkbox + label {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  #show-form-checkbox:checked ~ #reservation-form {
+    display: block;
+  }
+  
+  #reservation-form {
+    display: none;
+  }
+
+  
+  
+  
+  
+  
+  
+  
