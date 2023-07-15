@@ -75,7 +75,13 @@ class ReservationCreate(CreateView):
     model = Reservation
     fields = ['name', 'description', 'start_date', 'end_date', 'location', 'type', 'file', 'trip']
     template_name = "reservation_create.html"
+
+    def form_valid(self, form):
+        trip = Trip.objects.get(pk=self.kwargs['pk'])
+        form.instance.trip = trip
+        return super().form_valid(form)
     
     def get_success_url(self):
         return reverse('trip_detail', kwargs={'pk': self.object.pk})
+        
 
