@@ -6,7 +6,12 @@
 {% block content %}
 
 <h1 class="title pt-5">My Trips</h1>
-<a class="button is-rounded is-info is-inverted" href="{% url 'trip_create' %}">Add A New Trip</a>
+
+    <a href="{% url 'trip_create' %}" class="button is-rounded is-success is-inverted">
+            <span class="icon">
+                <i class="fas fa-plus"></i>
+            </span>
+    </a>
 <div class="gallery">
   {% for trip in trips %}
   <a href="{% url 'trip_detail' trip.pk %}">
