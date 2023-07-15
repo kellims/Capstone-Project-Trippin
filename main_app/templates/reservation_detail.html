@@ -7,6 +7,11 @@
     <div class="detail__about">
         <h4 class="title is-4"> {{ reservation.type }}: {{ reservation.name }} on {{ reservation.start_date}}</h4>
         <div class="buttons">
+            <a href="" class="button is-rounded is-primary is-inverted">
+                <span class="icon">
+                  <i class="fas fa-arrow-left"></i>
+                </span>
+              </a>
             <a href="{% url 'reservation_update' reservation.pk %}" class="button is-rounded is-info is-inverted">
                 <span class="icon">
                     <i class="fas fa-edit"></i>
