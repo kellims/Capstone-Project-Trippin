@@ -20,6 +20,11 @@
                 <i class="fas fa-trash-alt"></i>
             </span>
         </a>
+        <a href="{% url 'reservation_create' trip.pk %}" class="button is-rounded is-success is-inverted">
+            <span class="icon">
+                <i class="fas fa-plus"></i>
+            </span>
+        </a>
     </div>
     <div class="detail__about">
         <h4 class="title is-4">About My Trip</h4>
@@ -27,7 +32,8 @@
     </div>
 
     <div class="detail__reservations mb-5">
-        <h3 class="title is-3">Reservations</h3>
+        <h3 class="title is-3">Reservations</h3> 
+
     
         {% for reservation in trip.reservations.all %}
         <div class="reservation">
