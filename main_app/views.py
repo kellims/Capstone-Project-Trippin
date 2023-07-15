@@ -109,3 +109,10 @@ class ReservationUpdate(UpdateView):
     
     def get_success_url(self):
         return reverse('reservation_detail', kwargs={'pk': self.object.pk})    
+    
+class ReservationDelete(DeleteView):
+    model = Reservation
+    template_name = "reservation_delete_confirmation.html"
+    
+    def get_success_url(self):
+        return reverse('reservation_detail', kwargs={'pk': self.object.pk})     

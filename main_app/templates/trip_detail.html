@@ -129,8 +129,9 @@
         {% for reservation in trip.reservations.all %}
         <div class="reservation">
           <!-- <span>{{forloop.counter}}</span> -->
-          <span><b><a href="{% url 'reservation_detail' reservation.pk %}">{{ reservation.name }}</a></b></span>
           <span>{{reservation.start_date}}</span>
+          <span><b><a href="{% url 'reservation_detail' reservation.pk %}">{{ reservation.name }}</a></b></span>
+          
           <span>{{reservation.type}}</span>
           
         </div>

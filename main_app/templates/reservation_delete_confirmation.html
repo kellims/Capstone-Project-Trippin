@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="title pt-5">Are you sure you want to remove {{reservation.name}} from your {{ reservation.trip.location }} reservations?</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="buttons">
+        <input class="button is-rounded is-danger is-inverted" type="submit" value="Confirm" />
+        <a class="button button is-rounded is-primary is-inverted" href="{% url 'reservation_detail' reservation.pk %}">Keep Reservation</a>
+        <a class="button button is-rounded is-info is-inverted" href="{% url 'reservation_update' reservation.pk %}">Edit Reservation</a>
+    </div>
+</form>
+{% endblock %}
