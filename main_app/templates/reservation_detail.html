@@ -6,6 +6,19 @@
     
     <div class="detail__about">
         <h4 class="title is-4"> {{ reservation.type }}: {{ reservation.name }} on {{ reservation.start_date}}</h4>
+        <div class="buttons">
+            <a href="" class="button is-rounded is-info is-inverted">
+                <span class="icon">
+                    <i class="fas fa-edit"></i>
+                </span>
+            </a>
+            <a href="" class="button is-rounded is-danger is-inverted">
+                <span class="icon">
+                    <i class="fas fa-trash-alt"></i>
+                </span>
+            </a>
+        </div>
+        
         
         <p>{{ reservation.description }}</p>
         <br>
