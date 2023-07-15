@@ -5,8 +5,9 @@ from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
+from django.shortcuts import redirect
 
-from .models import Trip
+from .models import Trip, Reservation
 
 # Create your views here.
 
@@ -54,3 +55,21 @@ class TripDelete(DeleteView):
     model = Trip
     template_name = "trip_delete_confirmation.html"
     success_url = "/trips/"
+
+
+class ReservationCreate(View):
+
+    def post(self, request, pk):
+        name = request.POST.get("name")
+        description = request.POST.get("description")
+        start_date = request.POST.get("start_date")
+        end_date = request.POST.get("end_date")
+        location = request.POST.get("location")
+        type = request.POST.get("type")
+        file = request.POST.get("file")
+        trip = Trip.objects.get(pk=pk)
+        Reservation.objects.create(name=name, description=description, start_date=start_date, end_date=end_date, location=location, type=type, file=file, trip=trip)
+        return redirect('trip_detail', pk=pk)
+    
+
+
