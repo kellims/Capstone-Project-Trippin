@@ -1,0 +1,61 @@
+{% extends 'base.html' %} 
+{% block content %}
+<h1>Add A New Reservation For Your Trip To {{trip.location}}</h1>
+
+<form method="post">
+  {% csrf_token %} 
+  
+  <div class="field">
+    <label class="label" for="id_name">Name</label>
+    <div class="control">
+        {{ form.name }}
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="id_description">description</label>
+    <div class="control">
+        {{ form.description }}
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="id_start_date">Start Date</label>
+    <div class="control">
+        {{ form.start_date }}
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="id_end_date">End Date</label>
+    <div class="control">
+        {{ form.end_date }}
+    </div>
+  </div>
+
+  
+  <div class="field">
+    <label class="label" for="id_location">Location</label>
+    <div class="control">
+        {{ form.location }}
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="id_file">File</label>
+    <div class="control">
+        {{ form.file }}
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="id_type">Type</label>
+    <div class="control">
+        {{ form.type }}
+    </div>
+  </div>
+
+  <input type="submit" value="Add Reservation" />
+</form>
+
+{% endblock %}
