@@ -6,6 +6,7 @@
 <div class="detail__name">
     
     <h1 class="title">{{trip.location}}</h1>
+    <h3 class="subtitle"> {{trip.start_date}} - {{trip.end_date}}</h3>
 </div>
 <div class="detail__container">
     <div class="buttons">
@@ -24,6 +25,27 @@
         <h4 class="title is-4">About My Trip</h4>
         <p>{{trip.description}}</p>
     </div>
+
+    <div class="detail__reservations mb-5">
+        <h3 class="title is-3">Reservations</h3>
+    
+        {% for reservation in trip.reservations.all %}
+        <div class="reservation">
+          <span>{{forloop.counter}}</span>
+          <span><b>{{reservation.name}}</b></span>
+          <span>{{reservation.start_date}}</span>
+          <span>{{reservation.type}}</span>
+        </div>
+            {% empty %}
+        <article class="message">
+          <div class="message-header">
+            <p>No Reservations Available</p>
+          </div>
+        </article>
+    
+        {% endfor %}
+      </div>
+
 </div>
 
 {% endblock %}
