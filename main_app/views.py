@@ -98,3 +98,6 @@ class ReservationCreate(CreateView):
 #         return reverse('trip_detail', kwargs={'pk': self.object.pk})
         
 
+class ReservationDetail(DetailView):
+    model = Reservation
+    template_name = "reservation_detail.html"

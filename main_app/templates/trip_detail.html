@@ -115,60 +115,6 @@
                 </div>
             </div>
 
-
-
-
-                 <!-- <div class="field">
-                   <label class="label" for="id_name">Name</label>
-                   <div class="control">
-                       {{ form.name }}
-                   </div>
-                 </div>
-               
-                 <div class="field">
-                   <label class="label" for="id_description">description</label>
-                   <div class="control">
-                       {{ form.description }}
-                   </div>
-                 </div>
-               
-                 <div class="field">
-                   <label class="label" for="id_start_date">Start Date</label>
-                   <div class="control">
-                       {{ form.start_date }}
-                   </div>
-                 </div>
-               
-                 <div class="field">
-                   <label class="label" for="id_end_date">End Date</label>
-                   <div class="control">
-                       {{ form.end_date }}
-                   </div>
-                 </div>
-               
-                 
-                 <div class="field">
-                   <label class="label" for="id_location">Location</label>
-                   <div class="control">
-                       {{ form.location }}
-                   </div>
-                 </div>
-               
-                 <div class="field">
-                   <label class="label" for="id_file">File</label>
-                   <div class="control">
-                       {{ form.file }}
-                   </div>
-                 </div>
-               
-                 <div class="field">
-                   <label class="label" for="id_type">Type</label>
-                   <div class="control">
-                       {{ form.type }}
-                   </div>
-                 </div> -->
-               
-                 <!-- <input type="submit" value="Add Reservation" /> -->
                </form>
     
 
@@ -176,7 +122,7 @@
         {% for reservation in trip.reservations.all %}
         <div class="reservation">
           <span>{{forloop.counter}}</span>
-          <span><b>{{reservation.name}}</b></span>
+          <span><b><a href="{% url 'reservation_detail' reservation.pk %}">{{ reservation.name }}</a></b></span>
           <span>{{reservation.start_date}}</span>
           <span>{{reservation.type}}</span>
         </div>

@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<div class="detail__name">
+    
+    <h1 class="name">{{reservation.name}}</h1>
+    
+</div>
+<div class="detail__container">
+    
+    <div class="detail__about">
+        <h4 class="title is-4">About {{ reservation.name }}:</h4>
+        <p>{{reservation.description}}</p>
+    </div>
+
+    
+
+
+</div>
+
+{% endblock %}
