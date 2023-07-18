@@ -9,6 +9,9 @@ from django.shortcuts import redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+
 import logging
 
 logger = logging.getLogger(__name__)
@@ -25,7 +28,7 @@ class Home(TemplateView):
 class About(TemplateView):
     template_name = "about.html" 
 
-
+@method_decorator(login_required, name='dispatch')
 class TripList(TemplateView):
     template_name = "trip_list.html"
 
