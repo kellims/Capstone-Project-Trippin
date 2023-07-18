@@ -9,6 +9,7 @@ class Trip(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     image = models.CharField(max_length=20000, default='default_image.html')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     
     def __str__(self):
         return self.location
