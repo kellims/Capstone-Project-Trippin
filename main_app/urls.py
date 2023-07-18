@@ -17,4 +17,5 @@ urlpatterns = [
     path('trips/<int:pk>/reservations/update', views.ReservationUpdate.as_view(), name="reservation_update"),
     path('trips/<int:pk>/reservations/delete', views.ReservationDelete.as_view(), name="reservation_delete"),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup/', views.Signup.as_view(), name="signup")
 ]
