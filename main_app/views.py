@@ -29,7 +29,7 @@ class TripList(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["trips"] = Trip.objects.all()
+        context["trips"] = Trip.objects.filter(user=self.request.user)
         return context
     
 class TripCreate(CreateView):
