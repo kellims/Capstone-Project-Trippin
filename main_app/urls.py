@@ -1,8 +1,11 @@
 from django.urls import path, include
+from django.contrib import admin
 from . import views
 
 urlpatterns = [
+    # path('', include('main_app.urls')),
     path('', views.Home.as_view(), name="home"),
+    path('admin/', admin.site.urls),
     path('about/', views.About.as_view(), name="about"),
     path('trips/', views.TripList.as_view(), name="trip_list"),
     path('trips/new/', views.TripCreate.as_view(), name="trip_create"),
@@ -13,7 +16,5 @@ urlpatterns = [
     path('trips/<int:pk>/reservations/', views.ReservationDetail.as_view(), name="reservation_detail"),
     path('trips/<int:pk>/reservations/update', views.ReservationUpdate.as_view(), name="reservation_update"),
     path('trips/<int:pk>/reservations/delete', views.ReservationDelete.as_view(), name="reservation_delete"),
-    path('admin/', admin.site.urls),
-    path('', include('main_app.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
