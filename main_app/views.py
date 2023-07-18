@@ -36,6 +36,10 @@ class TripCreate(CreateView):
     model = Trip
     fields = ['location', 'description', 'start_date', 'end_date', 'image']
     template_name = "trip_create.html"
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(TripCreate, self).form_valid(form)
     
     def get_success_url(self):
         return reverse('trip_detail', kwargs={'pk': self.object.pk})
