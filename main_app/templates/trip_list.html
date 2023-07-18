@@ -7,17 +7,18 @@
 
 <h1 class="title pt-5">My Trips</h1>
 
-    <a href="{% url 'trip_create' %}" class="button is-rounded is-success is-inverted">
+    <a href="{% url 'trip_create' %}" class="button is-rounded is-success is-inverted is-centered>
             <span class="icon">
                 <i class="fas fa-plus"></i>
             </span>
     </a>
+    <br>
 <div class="gallery">
   {% for trip in trips %}
   <a href="{% url 'trip_detail' trip.pk %}">
     <div class="card">
       <div class="card-image">
-        <figure class="image is-4by5">
+        <figure class="image is-5by4">
           <img src="{{trip.image}}" alt="{{trip.location}}" />
         </figure>
       </div>

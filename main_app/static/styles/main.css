@@ -33,9 +33,12 @@ body {
   }
   
   .buttons a {
-    margin: 0 5px;
+    margin: 1px 5px;
   }
 
+.card {
+    padding: 10px; 
+}
 
 .detail__reservations {
     width: 100%;
