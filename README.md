@@ -1,7 +1,7 @@
 # Capstone Project: Trippin
 
 ## About
-I want to build an itinerary app where you can organize reservations and tickets by trip or event. You're also able to share your trip or event with any companions.
+I want to build my own version an itinerary app where you can organize reservations and tickets by trip or event. This keeps each trip organized, helps with planning, and provides easy access to important details while on the trip.
 
 ## Deployed Site
 https://trippin.onrender.com
@@ -20,3 +20,11 @@ https://trello.com/b/6pEWXBZy/travel-app-untitled
 + As a user, I can upload documents to my reservations, such as tickets which may be needed on the trip.
 + As a user, I can organize my reservations by type (restaurant reservations, day trips, tickets, site seeing locations, etc.)
 + As a user, I can edit and/or delete any reservations from my trip.
+
+## Future Features
++ As a user, I want to be able to change how my trips and events are able to be sorted, for example, instead of just by upcoming date, I can sort by other parameters such as locations, type, etc.
++ As a user, I want an event or trip to be separated into an archived section if it's already been completed.
++ As a user, I want to be able to get directions to each location/reservation.
++ As a user, I want to be able to invite other companions to my trips.
++ As a user, I want to be able to collaborate on the trips/events with the people I invited.
++ As a user, I want to be able to sort my reservations by type (restaurant reservations, day trips, tickets, site seeing locations, etc.)
