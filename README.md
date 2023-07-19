@@ -6,7 +6,7 @@ I want to build my own version an itinerary app where you can organize reservati
 ## Deployed Site
 https://trippin.onrender.com
 
-## Trello Board
+## Trello Board (Wireframes/ ERD)
 https://trello.com/b/6pEWXBZy/travel-app-untitled
 
 ## Technologies Used
