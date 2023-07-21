@@ -26,7 +26,8 @@
             </div>
             {% if user.is_authenticated %}
                     <div class="navbar-menu navbar-end">
-                        <span class="navbar-item">Welcome: {{user.username}}</span>
+                        <span class="navbar-item"">{{user.username}}</span>
+                        <!-- create user page here for user to manage their account -->
                         <a class="navbar-item" href="/trips">My Trips</a>
                         <a class="navbar-item" href="{% url 'logout' %}">Logout</a>
                     </div>

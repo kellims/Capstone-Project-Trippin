@@ -17,7 +17,7 @@ https://trello.com/b/6pEWXBZy/travel-app-untitled
 + Python-Django, HTML, CSS
 
 ## User Stories
-+ As a user, I can log into my account to access my trips.
++ As a user, I can log into my account so that I have access to my personal trips.
 + As a user, I can create multiple trip on my profile.
 + As a user, I can edit the details of a trip.
 + As a user, I can add multiple reservations to each trip.
